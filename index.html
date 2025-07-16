@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultra Modern Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@latest/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>📸 Ultra Modern Image Gallery</h1>
+    <div class="theme-toggle" onclick="toggleTheme()">🌓</div>
+  </header>
+
+  <section class="filter-buttons">
+    <button onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('tech')">Tech</button>
+    <button onclick="filterImages('people')">People</button>
+  </section>
+
+  <main class="gallery" id="gallery">
+    <div class="image-card nature" data-aos="fade-up">
+      <div class="overlay">Nature</div>
+      <img src="images/nature.jpg" loading="lazy" onclick="openLightbox(this)" alt="Nature">
+    </div>
+    <div class="image-card tech" data-aos="fade-up">
+      <div class="overlay">Tech</div>
+      <img src="images/tech.jpg" loading="lazy" onclick="openLightbox(this)" alt="Tech">
+    </div>
+    <div class="image-card people" data-aos="fade-up">
+      <div class="overlay">People</div>
+      <img src="images/Pradyumn.jpg" loading="lazy" onclick="openLightbox(this)" alt="People">
+    </div>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <img id="lightbox-img" src="" alt="Preview" />
+    <a id="download-btn" download>⬇️</a>
+    <span class="nav left" onclick="prevImage(event)">❮</span>
+    <span class="nav right" onclick="nextImage(event)">❯</span>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@latest/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
